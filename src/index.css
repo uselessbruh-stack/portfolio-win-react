@@ -1,0 +1,77 @@
+:root {
+  /* Light Theme Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f3f3;
+  --bg-tertiary: #e5e5e5;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.18);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.28);
+  --overlay-bg: rgba(243, 243, 243, 0.75);
+  --hover-bg: rgba(0, 0, 0, 0.04);
+  --active-bg: rgba(0, 0, 0, 0.08);
+  --accent-color: #0078d4;
+
+  /* Animation Settings */
+  --animation-duration: 0.2s;
+  --animation-timing: ease-out;
+}
+
+/* Dark Theme */
+body[data-theme="dark"] {
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #252525;
+  --bg-tertiary: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #b8b8b8;
+  --text-tertiary: #888888;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.9);
+  --overlay-bg: rgba(37, 37, 37, 0.75);
+  --hover-bg: rgba(255, 255, 255, 0.08);
+  --active-bg: rgba(255, 255, 255, 0.12);
+}
+
+/* Disable animations when setting is off */
+body[data-animations="false"] * {
+  animation-duration: 0s !important;
+  transition-duration: 0s !important;
+}
+
+/* Disable transparency when setting is off */
+body[data-transparency="false"] {
+  --overlay-bg: var(--bg-secondary);
+}
+
+body[data-transparency="false"] .taskbar,
+body[data-transparency="false"] .start-menu,
+body[data-transparency="false"] .window-header {
+  backdrop-filter: none !important;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color var(--animation-duration) var(--animation-timing),
+    color var(--animation-duration) var(--animation-timing);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}

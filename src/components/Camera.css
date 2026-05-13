@@ -1,0 +1,153 @@
+.camera-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #000;
+  position: relative;
+}
+
+.camera-viewfinder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.camera-viewfinder video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.camera-flash-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s;
+}
+
+.camera-flash-effect.active {
+  opacity: 0.8;
+}
+
+.camera-flash-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: background 0.2s;
+}
+
+.camera-flash-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.camera-controls-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.camera-gallery-btn,
+.camera-switch-btn {
+  width: 60px;
+  height: 60px;
+  border: 2px solid white;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 12px;
+  font-size: 28px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s;
+  position: relative;
+}
+
+.camera-gallery-btn:hover,
+.camera-switch-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.camera-count-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #0078d4;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.camera-capture-btn {
+  width: 80px;
+  height: 80px;
+  border: 4px solid white;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 6px;
+  transition: transform 0.1s;
+}
+
+.camera-capture-btn:hover {
+  transform: scale(1.05);
+}
+
+.camera-capture-btn:active {
+  transform: scale(0.95);
+}
+
+.capture-btn-inner {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 50%;
+}
+
+.camera-error {
+  text-align: center;
+  color: white;
+  padding: 40px;
+}
+
+.camera-error-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.camera-error h3 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+}
+
+.camera-error p {
+  margin: 0;
+  color: #ccc;
+  font-size: 14px;
+}

@@ -1,0 +1,113 @@
+.notepad-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+}
+
+.notepad-menubar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f8f8;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 4px 8px;
+}
+
+.notepad-menu {
+  display: flex;
+  gap: 2px;
+}
+
+.notepad-menu-item {
+  position: relative;
+}
+
+.notepad-menu-btn {
+  padding: 6px 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 3px;
+  transition: background 0.2s;
+}
+
+.notepad-menu-btn:hover {
+  background: #e8e8e8;
+}
+
+.notepad-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  min-width: 180px;
+  z-index: 1000;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.notepad-menu-item:hover .notepad-dropdown {
+  display: block;
+}
+
+.notepad-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.notepad-dropdown button:hover {
+  background: #f0f0f0;
+}
+
+.notepad-dropdown hr {
+  margin: 4px 0;
+  border: none;
+  border-top: 1px solid #e1e1e1;
+}
+
+.notepad-filename {
+  font-size: 13px;
+  color: #666;
+  padding: 6px 12px;
+}
+
+.notepad-textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: 'Consolas', 'Courier New', monospace;
+  padding: 16px;
+  resize: none;
+  line-height: 1.5;
+  overflow: auto;
+}
+
+.notepad-textarea::placeholder {
+  color: #999;
+}
+
+.notepad-statusbar {
+  display: flex;
+  gap: 20px;
+  padding: 6px 16px;
+  background: #f8f8f8;
+  border-top: 1px solid #e1e1e1;
+  font-size: 12px;
+  color: #666;
+}
+
+.notepad-statusbar span {
+  white-space: nowrap;
+}

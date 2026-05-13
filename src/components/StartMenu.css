@@ -1,0 +1,140 @@
+/* Start Menu Styles */
+#start-menu,
+.start-menu {
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 680px;
+  background: var(--overlay-bg);
+  backdrop-filter: blur(60px) saturate(150%);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+  z-index: 99999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: background var(--animation-duration) var(--animation-timing),
+    border-color var(--animation-duration) var(--animation-timing),
+    opacity var(--animation-duration) var(--animation-timing),
+    transform var(--animation-duration) var(--animation-timing);
+}
+
+.start-menu.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  display: flex !important;
+  animation: startMenuOpen var(--animation-duration) var(--animation-timing);
+}
+
+@keyframes startMenuOpen {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+.start-menu-header {
+  padding: 32px 40px 16px;
+  color: var(--text-primary);
+}
+
+.start-menu-header h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.start-menu-apps {
+  padding: 16px 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 16px;
+  overflow-y: auto;
+  flex: 1;
+  padding-bottom: 70px;
+  align-content: flex-start;
+}
+
+.start-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background var(--animation-duration) var(--animation-timing),
+    transform var(--animation-duration) var(--animation-timing);
+  width: calc((100% - 80px) / 6);
+  flex-shrink: 0;
+}
+
+.start-app:hover {
+  background: var(--hover-bg);
+  transform: scale(1.05);
+}
+
+.start-app-icon {
+  font-size: 32px;
+  margin-bottom: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-app-name {
+  color: var(--text-primary);
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.start-menu-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: inherit;
+  border-radius: 0 0 12px 12px;
+}
+
+.power-options {
+  display: flex;
+  gap: 8px;
+}
+
+.power-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--animation-duration) var(--animation-timing),
+    transform var(--animation-duration) var(--animation-timing);
+}
+
+.power-btn:hover {
+  background: var(--hover-bg);
+  transform: scale(1.1);
+}

@@ -1,0 +1,117 @@
+/* Window Styles */
+.window {
+  position: absolute;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  min-height: 300px;
+  overflow: hidden;
+  transition: box-shadow var(--animation-duration) var(--animation-timing),
+    background var(--animation-duration) var(--animation-timing),
+    transform var(--animation-duration) var(--animation-timing);
+  animation: windowOpen var(--animation-duration) var(--animation-timing);
+}
+
+@keyframes windowOpen {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.window.active {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
+}
+
+body[data-theme="dark"] .window.active {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.9);
+}
+
+.window.minimized {
+  display: none;
+}
+
+.window.maximized {
+  border-radius: 0 !important;
+}
+
+.window-header {
+  background: var(--bg-secondary);
+  padding: 0;
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  user-select: none;
+  border-bottom: 1px solid var(--border-color);
+  transition: background var(--animation-duration) var(--animation-timing);
+}
+
+.window-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  padding: 0 12px;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.window-title-icon {
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.window-controls {
+  display: flex;
+  height: 100%;
+}
+
+.window-control {
+  width: 46px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 10px;
+  transition: background var(--animation-duration) var(--animation-timing);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.window-control:hover {
+  background: var(--hover-bg);
+}
+
+.window-control.close:hover {
+  background: #c42b1c;
+  color: white;
+}
+
+.window-content {
+  flex: 1;
+  overflow: auto;
+  padding: 0;
+  background: var(--bg-primary);
+  transition: background var(--animation-duration) var(--animation-timing);
+}
+
+.window-content.no-padding {
+  padding: 0;
+}

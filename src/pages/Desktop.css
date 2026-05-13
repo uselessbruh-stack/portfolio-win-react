@@ -1,0 +1,43 @@
+/* Desktop Styles */
+#desktop,
+.desktop {
+  width: 100vw;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=1920&h=1080&fit=crop') center/cover;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  transition: filter var(--animation-duration, 0.2s) var(--animation-timing, ease-out);
+}
+
+body[data-theme="dark"] #desktop,
+body[data-theme="dark"] .desktop {
+  filter: brightness(0.8);
+}
+
+.desktop-content {
+  width: 100%;
+  height: calc(100% - 48px);
+  padding: 0;
+  position: relative;
+}
+
+.desktop-icons {
+  padding: 15px;
+  position: relative;
+  height: 100%;
+}
+
+.windows-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 48px;
+  pointer-events: none;
+}
+
+.windows-container>* {
+  pointer-events: auto;
+}
