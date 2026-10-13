@@ -13,7 +13,7 @@ const UBGPT = () => {
     }
   ]);
   const [input, setInput] = useState('');
-  const [apiKey, setApiKey] = useState(process.env.REACT_APP_GEMINI_API_KEY || '');
+  const [apiKey, setApiKey] = useState(import.meta.env.VITE_GEMINI_API_KEY || '');
   const [isLoading, setIsLoading] = useState(false);
   const [dialog, setDialog] = useState({ isOpen: false, type: 'alert', title: '', message: '', onConfirm: null });
   const messagesEndRef = useRef(null);

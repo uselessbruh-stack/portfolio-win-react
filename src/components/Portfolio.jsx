@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './Portfolio.css';
 
 const portfolioUrls = [
-  process.env.REACT_APP_PORTFOLIO_URL_1,
-  process.env.REACT_APP_PORTFOLIO_URL_2
+  import.meta.env.VITE_PORTFOLIO_URL_1,
+  import.meta.env.VITE_PORTFOLIO_URL_2
 ].filter(Boolean);
 
 const Portfolio = () => {

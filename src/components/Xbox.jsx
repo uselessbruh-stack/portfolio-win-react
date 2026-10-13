@@ -3,9 +3,9 @@ import './Xbox.css';
 import Dialog from './Dialog';
 
 const games = [
-  { id: 1, icon: '🐦', name: 'Flappy Bird', description: 'Click to play', url: process.env.REACT_APP_FLAPPY_BIRD_URL },
-  { id: 2, icon: '🐔', name: 'Crossy Road', description: 'Click to play', url: process.env.REACT_APP_CROSSY_ROAD_URL },
-  { id: 3, icon: '🐍', name: 'Snake Game', description: 'Click to play', url: process.env.REACT_APP_SNAKE_GAME_URL },
+  { id: 1, icon: '🐦', name: 'Flappy Bird', description: 'Click to play', url: import.meta.env.VITE_FLAPPY_BIRD_URL },
+  { id: 2, icon: '🐔', name: 'Crossy Road', description: 'Click to play', url: import.meta.env.VITE_CROSSY_ROAD_URL },
+  { id: 3, icon: '🐍', name: 'Snake Game', description: 'Click to play', url: import.meta.env.VITE_SNAKE_GAME_URL },
   { id: 4, icon: '🎰', name: 'Game Slot 4', description: 'Coming Soon', url: null },
   { id: 5, icon: '🎪', name: 'Game Slot 5', description: 'Coming Soon', url: null },
   { id: 6, icon: '🎨', name: 'Game Slot 6', description: 'Coming Soon', url: null },
